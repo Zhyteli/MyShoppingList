@@ -27,8 +27,11 @@ class ShopListAdapter : ListAdapter<ShopItem, ShopItemViewHolder>(ShopItemDiffCa
         holder.tvName.text = shopItem.name
         holder.tvCount.text = shopItem.count.toString()
         holder.view.setOnClickListener {
-            onShopItemLongClickListener?.invoke(shopItem)
             onShopItemClickListener?.invoke(shopItem)
+            true
+        }
+        holder.view.setOnLongClickListener{
+            onShopItemLongClickListener?.invoke(shopItem)
             true
         }
     }

@@ -1,6 +1,5 @@
 package com.zhytel.myshoppinglist.presentation
 
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.zhytel.myshoppinglist.data.ShopListRepositoryImpl
 import com.zhytel.myshoppinglist.domain.DeleteShopItemUseCase
