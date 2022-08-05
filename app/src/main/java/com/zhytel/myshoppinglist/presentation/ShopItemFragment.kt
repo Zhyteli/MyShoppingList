@@ -65,36 +65,6 @@ class ShopItemFragment: Fragment() {
         Log.d("OnLive", "onViewCreated")
     }
 
-    override fun onStart() {
-        super.onStart()
-        Log.d("OnLive", "onStart")
-    }
-
-    override fun onResume() {
-        super.onResume()
-        Log.d("OnLive", "onResume")
-    }
-
-    override fun onPause() {
-        super.onPause()
-        Log.d("OnLive", "onPause")
-    }
-
-    override fun onStop() {
-        super.onStop()
-        Log.d("OnLive", "onStop")
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        Log.d("OnLive", "onDestroy")
-    }
-
-    override fun onDetach() {
-        super.onDetach()
-        Log.d("OnLive", "onDetach")
-    }
-
     private fun observeViewModel() {
         viewModel.errorInputCount.observe(viewLifecycleOwner) {
             val message = if (it) {
