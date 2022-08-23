@@ -1,5 +1,8 @@
 package com.zhytel.myshoppinglist.domain
 
+import androidx.room.Entity
+
+@Entity(tableName = "shopList")
 data class ShopItem(
     val name:String,
     val count: Int,

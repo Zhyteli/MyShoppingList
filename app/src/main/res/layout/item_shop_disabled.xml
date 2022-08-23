@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <variable
+            name="shopItem"
+            type="com.zhytel.myshoppinglist.domain.ShopItem" />
+    </data>
+
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -25,7 +33,7 @@
             android:textColor="@color/white"
             android:textSize="16sp"
             android:textStyle="bold"
-            android:text="Салфетки"/>
+            android:text="@{shopItem.name}"/>
 
         <TextView
             android:id="@+id/tv_count"
@@ -34,7 +42,8 @@
             android:textColor="@color/white"
             android:textSize="16sp"
             android:textStyle="bold"
-            android:text="1"/>
+            android:text="@{shopItem.count}"/>
     </LinearLayout>
 
 </com.google.android.material.card.MaterialCardView>
+</layout>

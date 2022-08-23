@@ -4,12 +4,13 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.zhytel.myshoppinglist.domain.ShopItem
 import com.zhytel.myshoppinglist.domain.ShopListRepository
-import java.lang.RuntimeException
 import kotlin.random.Random
 
 object ShopListRepositoryImpl : ShopListRepository {
 
-    private val shopListVD = MutableLiveData<List<ShopItem>>()
+    private val _shopListVD = MutableLiveData<List<ShopItem>>()
+    private val shopListVD: LiveData<List<ShopItem>>
+        get() = _shopListVD
     private val shopList = sortedSetOf<ShopItem>({o1,o2 -> o1.id.compareTo(o2.id)})
     private var autoIncrementId = 0
 
@@ -44,10 +45,10 @@ object ShopListRepositoryImpl : ShopListRepository {
     }
 
     override fun getShopList(): LiveData<List<ShopItem>> {
-        return shopListVD
+        return _shopListVD
     }
 
     fun updateList(){
-        shopListVD.value = shopList.toList()
+        _shopListVD.value = shopList.toList()
     }
 }

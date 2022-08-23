@@ -9,7 +9,7 @@ import com.zhytel.myshoppinglist.domain.EditingShopItemUseCase
 import com.zhytel.myshoppinglist.domain.GetShopItemUseCase
 import com.zhytel.myshoppinglist.domain.ShopItem
 
-class ShopItemViewModel : ViewModel() {
+class ShopItemViewModel: ViewModel()  {
     private val repository = ShopListRepositoryImpl
 
     private val getShopItemUseCase = GetShopItemUseCase(repository)
